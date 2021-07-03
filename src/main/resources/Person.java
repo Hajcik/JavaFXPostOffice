@@ -12,8 +12,6 @@ public class Person {
     private String PostalAddress;
     private String City;
 
-
-
     public Person() {
     }
 

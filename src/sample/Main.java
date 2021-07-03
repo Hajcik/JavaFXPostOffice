@@ -1,6 +1,8 @@
 package sample;
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
@@ -13,7 +15,6 @@ import org.json.simple.parser.JSONParser;
 
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 
 public class Main extends Application {
@@ -21,8 +22,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setTitle("Post Office Application");
+        primaryStage.setScene(new Scene(root, 600, 720));
         primaryStage.show();
     }
 
@@ -53,9 +54,8 @@ public class Main extends Application {
                 String PostalAddress = (String) person.get("PostalAddress");
                 String City = (String) person.get("City");
 
+                // Testing if the data is being read from file
                 //System.out.println(Id + Name + Surname + hasCompany + CompanyName + Address + HouseNumber + PostalAddress + City);
-
-
 
                 // Setting person object to its values
                 personObj.setId(Id);
@@ -71,6 +71,8 @@ public class Main extends Application {
                 // Adding person to people array to use in application
                 people.add(personObj);
             }
+            // Add items from array list to observable list
+            ObservableList<Person> people_obs = FXCollections.observableArrayList(people);
         }
 
         catch (Exception e)
