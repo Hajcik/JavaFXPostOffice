@@ -1,0 +1,51 @@
+[
+    {
+      "Id": "0",
+      "Name": "Michael",
+      "Surname": "Reeves",
+      "hasCompany": false,
+      "CompanyName": null,
+      "Address": "Warrington",
+      "HouseNumber": "6b",
+      "PostalAddress": "32-205",
+      "City": "Washington"
+    },
+
+
+
+    {
+      "Id": "1",
+      "Name": "Anna",
+      "Surname": "Filmes",
+      "hasCompany": true,
+      "CompanyName": "Annes Movies",
+      "Address": "Lotington",
+      "HouseNumber": "35/13",
+      "PostalAddress": "50-203",
+      "City": "Leicester"
+    },
+
+    {
+      "Id": "2",
+      "Name": "Andrew",
+      "Surname": "Weets",
+      "hasCompany": false,
+      "CompanyName": null,
+      "Address": "Wilkinson",
+      "HouseNumber": "15",
+      "PostalAddress": "55-231",
+      "City": "Milkinson"
+    },
+
+    {
+      "Id": "3",
+      "Name": "Hans",
+      "Surname": "Burton",
+      "hasCompany": true,
+      "CompanyName": "Burton Burger",
+      "Address": "Sandreas",
+      "HouseNumber": "15",
+      "PostalAddress": "32-205",
+      "City": "Washington"
+    }
+]
