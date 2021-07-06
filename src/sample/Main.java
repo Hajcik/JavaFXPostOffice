@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.application.Application;
+import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +15,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import java.io.FileReader;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 
@@ -28,57 +30,8 @@ public class Main extends Application {
     }
 
 
+
     public static void main(String[] args) {
-        // Array of people loaded in to program
-        ArrayList<Person> people = new ArrayList<Person>();
-
-        // Load JSON data from .json file
-        JSONParser parser = new JSONParser();
-
-        try {
-            // Load data into JSONArray
-            JSONArray peopleJSON = (JSONArray) parser.parse(new FileReader("src/main/resources/addresses.json"));
-
-            for (Object obj : peopleJSON)
-            {
-                Person personObj = new Person();
-                JSONObject person = (JSONObject) obj;
-
-                String Id = (String) person.get("Id");
-                String Name = (String) person.get("Name");
-                String Surname = (String) person.get("Surname");
-                boolean hasCompany = (boolean) person.get("hasCompany");
-                String CompanyName = (String) person.get("CompanyName");
-                String Address = (String) person.get("Address");
-                String HouseNumber = (String) person.get("HouseNumber");
-                String PostalAddress = (String) person.get("PostalAddress");
-                String City = (String) person.get("City");
-
-                // Testing if the data is being read from file
-                //System.out.println(Id + Name + Surname + hasCompany + CompanyName + Address + HouseNumber + PostalAddress + City);
-
-                // Setting person object to its values
-                personObj.setId(Id);
-                personObj.setId(Name);
-                personObj.setSurname(Surname);
-                personObj.setHasCompany(hasCompany);
-                personObj.setCompanyName(CompanyName);
-                personObj.setAddress(Address);
-                personObj.setHouseNumber(HouseNumber);
-                personObj.setPostalAddress(PostalAddress);
-                personObj.setCity(City);
-
-                // Adding person to people array to use in application
-                people.add(personObj);
-            }
-            // Add items from array list to observable list
-            ObservableList<Person> people_obs = FXCollections.observableArrayList(people);
-        }
-
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
         launch(args);
     }
 }

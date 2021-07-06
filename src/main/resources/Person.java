@@ -98,4 +98,19 @@ public class Person {
     public void setCity(String city) {
         City = city;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "Id='" + Id + '\'' +
+                ", Name='" + Name + '\'' +
+                ", Surname='" + Surname + '\'' +
+                ", hasCompany=" + hasCompany +
+                ", CompanyName='" + CompanyName + '\'' +
+                ", Address='" + Address + '\'' +
+                ", HouseNumber='" + HouseNumber + '\'' +
+                ", PostalAddress='" + PostalAddress + '\'' +
+                ", City='" + City + '\'' +
+                '}';
+    }
 }

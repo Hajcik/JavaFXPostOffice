@@ -4,4 +4,6 @@ module JavaFXPostOffice {
     requires json.simple;
 
     opens sample;
+
+    exports sample;
 }
