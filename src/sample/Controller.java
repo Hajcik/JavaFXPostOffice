@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
+import javafx.util.Pair;
 import main.resources.Person;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -17,9 +18,14 @@ import org.json.simple.parser.JSONParser;
 import java.io.FileReader;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
+
+    // TextFields for Alert Add Addresses
+    public TextField NameTf;
+    public TextField SurnameTf;
 
     public ListView listViewPeople;
     public Button aboutBtn;
@@ -103,17 +109,24 @@ public class Controller implements Initializable {
         about.showAndWait();
     }
 
+    private Label idLabel, nameLabel, surnameLabel;
+
     public void setAddAddressBtn()
     {
-        Alert addAddress = new Alert(Alert.AlertType.INFORMATION);
+        TextInputDialog addAddress = new TextInputDialog("Add address");
         addAddress.setTitle("Add address");
         addAddress.setHeaderText(null);
-        addAddress.showAndWait();
 
-        ButtonType btnAdd = new ButtonType("Add");
-        ButtonType btnCancel = new ButtonType("Cancel");
+        addAddress.setContentText("Id:\nName:\nSurname:");
 
-        addAddress.getButtonTypes().setAll(btnAdd, btnCancel);
+        Optional<String> result = addAddress.showAndWait();
+
+        result.ifPresent(id -> {
+            this.idLabel.setText(id);
+            this.nameLabel.setText(id);
+        });
+
+
     }
 
     @Override
