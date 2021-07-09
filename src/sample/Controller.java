@@ -3,12 +3,16 @@ package sample;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafx.util.Pair;
 import main.resources.Person;
 import org.json.simple.JSONArray;
@@ -16,6 +20,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import java.io.FileReader;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Optional;
@@ -30,6 +35,22 @@ public class Controller implements Initializable {
     public ListView listViewPeople;
     public Button aboutBtn;
     public Button addAddressBtn;
+
+    // Dialog "Add Address"
+    public void onOpenDialog(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("addAddress.fxml"));
+        Parent parent = fxmlLoader.load();
+
+        // there should be code for new controller, but i'm sticking with
+        // one Controller code for learning
+
+        Scene scene = new Scene(parent, 300, 400);
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setScene(scene);
+        stage.setTitle("Add Address");
+        stage.showAndWait();
+    }
 
     public void loadJSONData()
     {
@@ -109,25 +130,6 @@ public class Controller implements Initializable {
         about.showAndWait();
     }
 
-    private Label idLabel, nameLabel, surnameLabel;
-
-    public void setAddAddressBtn()
-    {
-        TextInputDialog addAddress = new TextInputDialog("Add address");
-        addAddress.setTitle("Add address");
-        addAddress.setHeaderText(null);
-
-        addAddress.setContentText("Id:\nName:\nSurname:");
-
-        Optional<String> result = addAddress.showAndWait();
-
-        result.ifPresent(id -> {
-            this.idLabel.setText(id);
-            this.nameLabel.setText(id);
-        });
-
-
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)

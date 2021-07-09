@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="sample.AddAddressController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AddressController">
+   <children>
+      <Label layoutX="25.0" layoutY="33.0" prefHeight="17.0" prefWidth="81.0" text="ID:" />
+      <Label layoutX="25.0" layoutY="59.0" prefHeight="17.0" prefWidth="81.0" text="Name:" />
+      <Label layoutX="25.0" layoutY="85.0" prefHeight="17.0" prefWidth="81.0" text="Surname:" />
+      <Label fx:id="companyLabel" layoutX="29.0" layoutY="248.0" prefHeight="17.0" prefWidth="81.0" text="Company:" />
+      <Label layoutX="25.0" layoutY="110.0" prefHeight="17.0" prefWidth="81.0" text="Address:" />
+      <Label layoutX="25.0" layoutY="136.0" text="House Number" />
+      <TextField fx:id="idTf" layoutX="123.0" layoutY="34.0" />
+      <TextField fx:id="nameTf" layoutX="123.0" layoutY="60.0" />
+      <TextField fx:id="surnameTf" layoutX="123.0" layoutY="86.0" />
+      <TextField fx:id="companyTf" layoutX="123.0" layoutY="244.0" />
+      <TextField fx:id="addressTf" layoutX="123.0" layoutY="111.0" />
+      <TextField fx:id="houseNumberTf" layoutX="123.0" layoutY="137.0" />
+      <TextField fx:id="postalAddressTf" layoutX="123.0" layoutY="164.0" />
+      <TextField fx:id="cityTf" layoutX="123.0" layoutY="189.0" />
+      <Label layoutX="27.0" layoutY="168.0" prefHeight="17.0" prefWidth="81.0" text="Postal Address" />
+      <Label layoutX="29.0" layoutY="193.0" prefHeight="17.0" prefWidth="81.0" text="City:" />
+      <CheckBox fx:id="haveCompanyCheckBox" layoutX="27.0" layoutY="221.0" mnemonicParsing="false" text="Have Company?" />
+      <Button fx:id="addBtn" layoutX="158.0" layoutY="348.0" mnemonicParsing="false" text="Add" onAction="#btnAdd" />
+      <Button fx:id="closeBtn" layoutX="224.0" layoutY="348.0" mnemonicParsing="false" text="Cancel"  onAction="#btnCancel" />
+   </children>
 </AnchorPane>
