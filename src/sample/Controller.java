@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -22,9 +23,11 @@ import org.json.simple.parser.JSONParser;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.security.Policy;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
 public class Controller implements Initializable {
 
@@ -95,19 +98,26 @@ public class Controller implements Initializable {
 
                 // Adding person to people array to use in application
                 people.add(personObj);
+
             }
             // Add items from array list to observable list
             ObservableList<Person> people_obs = FXCollections.observableArrayList(people);
 
-            for(Person person : people_obs)
-            {
-                // to do: make listview display only name's and address,
-                // if has company, display it too
-            //    listViewPeople.setItems(people_obs.forEach());
-
-            }
-
             listViewPeople.setItems(people_obs);
+            listViewPeople.setCellFactory(param -> new ListCell<Person>(){
+                @Override
+                protected void updateItem(Person person, boolean empty) {
+                    super.updateItem(person, empty);
+
+                    if(empty || person == null || person.getName() == null) {
+                        setText(null);
+                    } else {
+                        setText(person.listViewDisplay());
+                    }
+                }
+            });
+
+
 
         }
 
@@ -134,7 +144,27 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
-        loadJSONData();
+
+        // ensures there are no threads errors and refreshes ListView
+        // with new data inserted into it, pretty cool!
+        boolean keepRunning = true;
+        // lambda expression
+        Thread thread = new Thread(() -> {
+            while(keepRunning)
+            {
+                try {
+                    Thread.sleep(500); // lambda expression
+                    Platform.runLater(() -> loadJSONData());
+                }
+
+                catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        thread.start();
+
 
 
 

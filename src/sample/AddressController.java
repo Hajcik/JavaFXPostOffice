@@ -9,9 +9,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import main.resources.Person;
+import org.json.simple.JSONArray;
+import org.json.simple.parser.JSONParser;
 
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.text.ParseException;
 import java.util.ResourceBundle;
 
 public class AddressController implements Initializable {
@@ -29,6 +35,7 @@ public class AddressController implements Initializable {
     public Button addBtn;
     public Button closeBtn;
 
+
     @FXML
     public void btnCancel(ActionEvent event) {
         Stage stage = (Stage) closeBtn.getScene().getWindow();
@@ -37,6 +44,9 @@ public class AddressController implements Initializable {
 
     @FXML
     public void btnAdd(ActionEvent event) {
+        JSONParser parser = new JSONParser();
+        Person person = new Person();
+
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setHeaderText("Error in adding data");
 
@@ -60,12 +70,39 @@ public class AddressController implements Initializable {
 
             else {
 
-                alert.setHeaderText("Adding data succesful.");
+                try {
+                    JSONArray peopleJSON = (JSONArray) parser.parse(new FileReader("src/main/resources/addresses.json"));
+
+                        alert.setHeaderText("Address adding successful");
+                        person.setId(idTf.getText());
+                        person.setName(nameTf.getText());
+                        person.setSurname(surnameTf.getText());
+                        person.setAddress(addressTf.getText());
+                        person.setHouseNumber(houseNumberTf.getText());
+                        person.setPostalAddress(postalAddressTf.getText());
+                        person.setCity(cityTf.getText());
+                        person.setHasCompany(haveCompanyCheckBox.isSelected());
+                        person.setCompanyName(companyTf.getText());
+                        alert.setHeaderText("Adding data succesful.");
+
+                        peopleJSON.add(person);
+
+                        FileWriter file = new FileWriter("src/main/resources/addresses.json");
+                        file.write(peopleJSON.toJSONString());
+                        file.flush();
+                        file.close();
+
+                        System.out.println(person.toString());
+
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
             }
                 alert.showAndWait();
-
     }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)

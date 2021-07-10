@@ -101,16 +101,34 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "Id='" + Id + '\'' +
-                ", Name='" + Name + '\'' +
-                ", Surname='" + Surname + '\'' +
-                ", hasCompany=" + hasCompany +
-                ", CompanyName='" + CompanyName + '\'' +
-                ", Address='" + Address + '\'' +
-                ", HouseNumber='" + HouseNumber + '\'' +
-                ", PostalAddress='" + PostalAddress + '\'' +
-                ", City='" + City + '\'' +
+        return "{" +
+                "\"Id\":\"" + Id + '\"' +
+                ",\"Name\":\"" + Name + '\"' +
+                ",\"Surname\":\"" + Surname + '\"' +
+                ",\"hasCompany\":" + hasCompany +
+                ",\"CompanyName\":\"" + CompanyName + '\"' +
+                ",\"Address\":\"" + Address + '\"' +
+                ",\"HouseNumber\":\"" + HouseNumber + '\"' +
+                ",\"PostalAddress\":\"" + PostalAddress + '\"' +
+                ",\"City\":\"" + City + '\"' +
                 '}';
     }
+
+    public String listViewDisplay()
+    {
+        if(!hasCompany){
+            return  "ID: " + Id  +
+                    " Name: " + Name +
+                    " Surname: " + Surname +
+                    " Address: " + Address + " " + HouseNumber +
+                    " City and Postal: " + City + " " + PostalAddress;
+        }
+        else return "ID: " + Id  +
+                    " Name: " + Name +
+                    " Surname: " + Surname +
+                    " Address: " + Address + " " + HouseNumber +
+                    " City and Postal: " + City + " " + PostalAddress +
+                    " Company: " + CompanyName;
+    }
+
 }
