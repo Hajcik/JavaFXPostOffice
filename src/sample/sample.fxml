@@ -23,7 +23,7 @@
                <font>
                   <Font name="System Bold Italic" size="18.0" />
                </font></Button>
-            <Button layoutX="279.0" layoutY="180.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="147.0" text="Exit">
+            <Button fx:id="exitBtn" layoutX="279.0" layoutY="180.0" mnemonicParsing="false" onAction="#exitBtn" prefHeight="41.0" prefWidth="147.0" text="Exit">
                <font>
                   <Font name="Arial Bold" size="17.0" />
                </font></Button>

@@ -39,6 +39,7 @@ public class Controller implements Initializable {
     public ListView listViewPeople;
     public Button aboutBtn;
     public Button addAddressBtn;
+    public Button exitBtn;
 
     // Dialog "Add Address"
     public void onOpenDialog(ActionEvent event) throws IOException {
@@ -154,6 +155,12 @@ public class Controller implements Initializable {
         about.showAndWait();
     }
 
+    @FXML
+    public void exitBtn()
+    {
+        Stage stage = (Stage) exitBtn.getScene().getWindow();
+        stage.close();
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
