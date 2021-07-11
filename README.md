@@ -13,22 +13,22 @@ Application is in a state that can be greatly improved. It has it's desired func
 
 # Screenshots
 
-<p align="center">
+<p align="left">
     <img src="https://github.com/Hajcik/JavaFXPostOffice/blob/main/img/image1.JPG">
 </p>
 <br>
 
-<p align="center">
+<p align="left">
     <img src="https://github.com/Hajcik/JavaFXPostOffice/blob/main/img/image2.JPG">
 </p>
 <br>
 
-<p align="center">
+<p align="left">
     <img src="https://github.com/Hajcik/JavaFXPostOffice/blob/main/img/image3.JPG">
 </p>
 <br>
 
-<p align="center">
+<p align="left">
     <img src="https://github.com/Hajcik/JavaFXPostOffice/blob/main/img/image4.JPG">
 </p>
 
