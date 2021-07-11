@@ -9,7 +9,7 @@ App provides few buttons.
 
 # Development opportunities
 
-Application is a state that can be greatly improved. It has it's desired functionalities, but it was mostly an attempt to learn mechanics and ideas behind Java and JavaFX library. Knowledge gained in this project will be used in a future and on more elaborate projects.
+Application is in a state that can be greatly improved. It has it's desired functionalities, but it was mostly an attempt to learn mechanics and ideas behind Java and JavaFX library. Knowledge gained in this project will be used in a future and on more elaborate projects.
 
 # Screenshots
 
