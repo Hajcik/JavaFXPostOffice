@@ -13,8 +13,8 @@ Application is a state that can be greatly improved. It has it's desired functio
 
 # Screenshots
 
-![main](https://github.com/Hajcik/JavaFXPostOffice/blob/main/img/image1.JPG)
-![about](https://github.com/Hajcik/JavaFXPostOffice/blob/main/img/image3.JPG)
-![add](https://github.com/Hajcik/JavaFXPostOffice/blob/main/img/image2.JPG)
-![details](https://github.com/Hajcik/JavaFXPostOffice/blob/main/img/image4.JPG)
+![main](https://github.com/Hajcik/JavaFXPostOffice/blob/main/img/image1.JPG) <br>
+![add](https://github.com/Hajcik/JavaFXPostOffice/blob/main/img/image2.JPG) <br>
+![about](https://github.com/Hajcik/JavaFXPostOffice/blob/main/img/image3.JPG) <br>
+![details](https://github.com/Hajcik/JavaFXPostOffice/blob/main/img/image4.JPG) <br>
  
