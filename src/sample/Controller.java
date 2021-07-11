@@ -4,6 +4,7 @@ import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -112,12 +113,10 @@ public class Controller implements Initializable {
                     if(empty || person == null || person.getName() == null) {
                         setText(null);
                     } else {
-                        setText(person.listViewDisplay());
+                        setText(person.getId() + " " + person.getName() + " " + person.getSurname());
                     }
                 }
             });
-
-
 
         }
 
@@ -128,6 +127,19 @@ public class Controller implements Initializable {
 
     }
 
+    @FXML
+    protected void onClickListViewCell(Event event)
+    {
+        Alert infoAlert = new Alert(Alert.AlertType.INFORMATION);
+        infoAlert.setTitle("Person Data");
+        infoAlert.setHeaderText(null);
+
+        Person person = (Person) listViewPeople.getSelectionModel().getSelectedItem();
+
+        infoAlert.setContentText(person.listViewDisplay());
+        infoAlert.showAndWait();
+    }
+
     public void setAboutBtn()
     {
         Alert about = new Alert(Alert.AlertType.INFORMATION);
@@ -135,7 +147,9 @@ public class Controller implements Initializable {
         about.setHeaderText("About the application");
         about.setContentText("Author: Mariusz Jędrzejewski\n" +
                 "About: Application provides help with getting and setting addresses for a" +
-                "a small Post Office.");
+                "a small Post Office." +
+                "\n\nClick line with ID and name to view small window with all information about the" +
+                "client address.");
 
         about.showAndWait();
     }

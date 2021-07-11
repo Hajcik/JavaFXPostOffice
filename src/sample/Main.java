@@ -25,7 +25,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Post Office Application");
-        primaryStage.setScene(new Scene(root, 600, 720));
+        primaryStage.setScene(new Scene(root, 445, 265));
         primaryStage.show();
     }
 

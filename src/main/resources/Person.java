@@ -118,17 +118,17 @@ public class Person {
     {
         if(!hasCompany){
             return  "ID: " + Id  +
-                    " Name: " + Name +
-                    " Surname: " + Surname +
-                    " Address: " + Address + " " + HouseNumber +
-                    " City and Postal: " + City + " " + PostalAddress;
+                    " \nName: " + Name +
+                    " \nSurname: " + Surname +
+                    " \nAddress: " + Address + " " + HouseNumber +
+                    " \nCity and Postal: " + City + " " + PostalAddress;
         }
         else return "ID: " + Id  +
-                    " Name: " + Name +
-                    " Surname: " + Surname +
-                    " Address: " + Address + " " + HouseNumber +
-                    " City and Postal: " + City + " " + PostalAddress +
-                    " Company: " + CompanyName;
+                    " \nName: " + Name +
+                    " \nSurname: " + Surname +
+                    " \nAddress: " + Address + " " + HouseNumber +
+                    " \nCity and Postal: " + City + " " + PostalAddress +
+                    " \nCompany: " + CompanyName;
     }
 
 }
