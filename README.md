@@ -13,6 +13,11 @@ Application is a state that can be greatly improved. It has it's desired functio
 
 # Screenshots
 
+<p align="center">
+    <img src="img/image1">
+</p>
+xddddd
+
 ![main](https://github.com/Hajcik/JavaFXPostOffice/blob/main/img/image1.JPG) <br>
 ![add](https://github.com/Hajcik/JavaFXPostOffice/blob/main/img/image2.JPG) <br>
 ![about](https://github.com/Hajcik/JavaFXPostOffice/blob/main/img/image3.JPG) <br>
